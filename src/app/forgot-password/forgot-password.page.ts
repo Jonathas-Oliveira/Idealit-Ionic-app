@@ -21,7 +21,7 @@ export class ForgotPasswordPage implements OnInit {
 
   ngOnInit() {
   }
-async forgot(){
+async resetPassword(){
   if(this.email){
     const loading = await this.loadingCtr.create({
       message:"Enviando link de redefinição...",
