@@ -8,5 +8,28 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
-</ion-content>
+  <ion-item>
+    <ion-input type="text" placeholder="Digite a tarefa"
+        [(ngModel)]="taskName"></ion-input>
+ 
+  <div class="item-note" item-end>
+    <ion-button color="primary" (click)="addTask()">
+    <ion-icon name="add"></ion-icon>
+    </ion-button>
+  </div>
+  </ion-item>
+<div padding>
+<ion-list>
+<ion-item *ngFor="let todo of taskList; let i = index">
+{{todo}}
+<div class="item-note" slot="end">
+<ion-button color="danger" clear (click)="deleteTask(i)">
+<ion-icon name="trash"></ion-icon>
+</ion-button>
+</div>
+</ion-item>
+</ion-list>
+</div>
+</ion-content>  
+
+
